@@ -11,7 +11,6 @@ class PayFortFailureResult {
   });
 
   factory PayFortFailureResult.fromMap(Map<String, dynamic> map) {
-    print('PayFortFailureResult.fromMap input: ' + map.toString());
     return PayFortFailureResult(
       message: map['message'] ?? '',
       response: (map['response'] as Map?)?.cast(),
