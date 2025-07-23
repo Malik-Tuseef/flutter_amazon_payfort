@@ -1,7 +1,7 @@
 class PayFortFailureResult {
   /// The message description of the response code; it returns according to the request language..
   ///
-  final String message;
+  final String? message;
 
   final Map<String, dynamic>? response;
 
@@ -11,6 +11,7 @@ class PayFortFailureResult {
   });
 
   factory PayFortFailureResult.fromMap(Map<String, dynamic> map) {
+    print('PayFortFailureResult.fromMap input: ' + map.toString());
     return PayFortFailureResult(
       message: map['message'] ?? '',
       response: (map['response'] as Map?)?.cast(),
