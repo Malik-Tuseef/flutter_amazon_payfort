@@ -60,6 +60,10 @@ class FortRequest {
   ///
   final String? phoneNumber;
 
+  /// The customer’s extra information.
+  ///
+  final String? merchantExtra;
+
   const FortRequest({
     required this.command,
     required this.amount,
@@ -75,6 +79,7 @@ class FortRequest {
     this.paymentOption,
     this.eci,
     this.phoneNumber,
+    this.merchantExtra,
   });
 
   FortRequest copyWith({
@@ -92,6 +97,7 @@ class FortRequest {
     String? paymentOption,
     String? eci,
     String? phoneNumber,
+    String? merchantExtra,
   }) {
     return FortRequest(
       command: command ?? this.command,
@@ -108,6 +114,7 @@ class FortRequest {
       paymentOption: paymentOption ?? this.paymentOption,
       eci: eci ?? this.eci,
       phoneNumber: phoneNumber ?? this.phoneNumber,
+      merchantExtra: merchantExtra ?? this.merchantExtra,
     );
   }
 
@@ -127,6 +134,7 @@ class FortRequest {
       'payment_option': paymentOption,
       'eci': eci,
       'phone_number': phoneNumber,
+      'merchant_extra': merchantExtra,
     };
   }
 }
